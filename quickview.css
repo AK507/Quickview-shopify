@@ -1,0 +1,531 @@
+.quick-view-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0,0,0,.5);
+  z-index: 9999999;
+}
+.quick-view-wrapper {
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  width: 100%;
+  max-width: calc(100% - 408px);
+  border-radius: 50.4px;
+  padding: 50px 55px;
+}
+.quick-view-wrapper .quick-close {
+  position: absolute;
+  top: 22px;
+  right: 47px;
+  font-family: 'Gotham';
+  font-weight: 350;
+  font-size: 30.24px;
+  color: #33332D;
+  cursor: pointer;
+}
+.quick-product-image img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 706px;
+  display: block;
+  border-radius: 6.93857px;
+}
+.quick-product-image {
+  width: calc(50% - 24px);
+}
+.quick-product-info {
+  width: calc(50% - 24px);
+  padding-top: 44px;
+}
+.quick-view-wrapper .vendor {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 54px;
+  color: #000;
+  margin-top: 0;
+    margin-bottom: 0px;
+}
+.quick-view-wrapper h2 {
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: 350;
+  font-size: 40px;
+  line-height: 111.7%;
+  letter-spacing: -3px;
+  color: #33332D;
+  margin-top: 0;
+  margin-bottom: 0px;
+}
+.quick-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 0px;
+}
+.quick-description, .quick-description p {
+  font-family: 'Poppins';
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 27px;
+  color: #33332D;
+}
+.quick-action button {
+  justify-content: left;
+  border-radius: 0 0 6.938px 6.938px;
+  background: #000;
+  border-color: #000;
+  outline-color: #000;
+  height: 62px;
+  padding: 0 36px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  outline: none!important;
+  border: 1px solid #000!important;
+  box-shadow: unset!important;
+}
+.quick-action button .quick-price {
+  margin-left: 8px;
+}
+.quick-variants {
+  margin-bottom: 38px;
+}
+.quick-action button svg circle {
+  stroke: #fff;
+}
+.quick-action button:hover {
+  color: #000!important;
+}
+.quick-action button:hover svg circle {
+  stroke: #000;
+}
+.qv-swatch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.qv-swatch input[type='radio'] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+}
+.qv-swatch-item {
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  height: 53px;
+  width: 50%;
+  max-width: 179px;
+  text-align: center;
+  border: 1px solid #33332D;
+  border-radius: 10px;
+  color: #33332D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  position: relative;
+}
+.qv-swatch-item:hover, .qv-swatch-item.active {
+  background: #33332D;
+  color: #fff;
+}
+.qv-selling-plans {
+  font-size: 0;
+  color: transparent;
+}
+.qv-selling-plans div, .qv-selling-plans li {
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: 350;
+  font-size: 20.8157px;
+  line-height: 25px;
+}
+.qv-selling-plans ul {
+  margin: 0;
+  padding: 0;
+  background: #FCFCFA;
+}
+.qv-selling-plans li {
+  list-style-type: none;
+  padding: 18px 20px;
+  border: 1px solid #000;
+}
+.qv-selling-plans li:last-of-type {
+  border-top: unset;
+}
+.qv-selling-plans .recurring-subscribe label {
+  justify-content: flex-start;
+
+}
+.qv-selling-plans li label input:checked~* {
+  font-family: 'Gotham';
+}
+.qv-selling-plans .recurring-subscribe select {
+  font-family: 'Gotham-book';
+  font-weight: 500;
+  font-size: 17px;
+  font-family: inherit;
+  background: transparent;
+  border: unset;
+  outline: none;
+  box-shadow: unset;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  letter-spacing: -2.6px;
+  -webkit-appearance: none;
+}
+.qv-selling-plans .recurring-subscribe .recurring-options {
+  position: relative;
+}
+.qv-selling-plans .recurring-subscribe .recurring-options:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: -19px;
+  width: 13px;
+  height: 18px;
+  background-image: url("arr-down.svg");
+  background-repeat: no-repeat;
+  background-size: 13px;
+  background-position: center;
+}
+.qv-selling-plans li label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  color: #33332D;
+  font-family: 'Gotham-book';
+  font-size: 17px;
+  padding-left: 40px;
+  letter-spacing: -2.6px;
+}
+.qv-selling-plans li label .widget-text{
+  letter-spacing: 1px;
+}
+.qv-selling-plans li input {
+  filter: grayscale(1) contrast(2);
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 24.29px;
+  height: 24.29px;
+  opacity: 0;
+}
+.qv-selling-plans li label:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 24.29px;
+  height: 24.29px;
+  border: 1.73464px solid #33332D;
+  border-radius: 100%;
+}
+.qv-selling-plans li label:after {
+  content: '';
+  position: absolute;
+  top: 2.5px;
+  left: 4px;
+  width: 15.61px;
+  height: 15.61px;
+  border-radius: 100%;
+  background: #33332D;
+  opacity: 0;
+}
+.qv-selling-plans li.active label:after {
+  opacity: 1;
+}
+/*.qv-selling-plans li.active label:before {
+  background-image: url("dark-circle.svg");
+  background-repeat: no-repeat;
+  background-size: 15.61px;
+  background-position: center;
+}*/
+.item-notification {
+  font-size: 18px;
+  font-family: 'Gotham-book';
+  color: #1b4388;
+  letter-spacing: 0;
+  display: block;
+  text-align: center;
+}
+.qv-ingredients-wrapper {
+  margin-bottom: 25px;
+}
+.qv-ingredients-wrapper h3 {
+  font-family: 'Gotham';
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #33332D;
+  margin: 0 0 5px;
+}
+.qv-ingredients-wrapper ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  column-gap: 18px;
+}
+.qv-ingredients-wrapper ul li {
+  list-style-type: none;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 27px;
+  color: #33332D;
+}
+.qv-ingredients-wrapper ul li:first-of-type {
+  margin-left: 0;
+}
+.qv-ingredients-wrapper ul li:before {
+  content: '';
+  display: inline-block;
+  width: 16.59px;
+  height: 11.5px;
+  background-image: url('check-yellow.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom left;
+  margin-bottom: 0px;
+  margin-right: 14px;
+}
+
+.quick-product-info::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.quick-product-info::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+.quick-product-info::-webkit-scrollbar-thumb {
+  background: #000; 
+}
+
+/* Handle on hover */
+.quick-product-info::-webkit-scrollbar-thumb:hover {
+  background: #1b4388; 
+}
+
+/*Qty Selector*/
+.quick-selecter{
+  height: 53px;
+  border-color: #33332d;
+  border-radius: 6.2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  align-items: center;
+  max-width: 180px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #33332d;
+  margin-bottom: 25px;
+}
+.quick-selecter button{
+  width: 38px;
+  background: transparent;
+  border: unset;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quick-selecter button svg{
+  width: 20px;
+}
+.quick-selecter input::-webkit-outer-spin-button, .quick-selecter input::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+.quick-selecter input{
+  width: 72px;
+  border: unset;
+  text-align: center;
+  outline: none;
+  box-shadow: none;
+  font-size: 16px;
+  font-family: Gotham;
+  font-weight: 700;
+  color: #33332d;
+}
+@media screen and (min-width: 1650px) {
+  .qv-selling-plans li label:after {
+    top: 2.3px;
+    left: 4.5px;
+  }
+  .quick-view-wrapper {
+    max-width: 1512px;
+  }
+  .quick-view-wrapper h2 {
+    font-size: 60px;
+    margin-bottom: 14px;
+  }
+  .qv-ingredients-wrapper ul li {
+    font-size: 18px;
+  }
+  .qv-selling-plans li label, .qv-selling-plans .recurring-subscribe select {
+    font-size: 20.8157px;
+  }
+  .quick-description {
+    margin-bottom: 15px;
+  }
+  .qv-ingredients-wrapper {
+    margin-bottom: 40px;
+  }
+  .quick-action button {
+    font-size: 27.7543px;
+    height: 86px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .quick-view-wrapper {
+    max-width: calc(100% - 308px);
+  }
+}
+@media screen and (max-width: 1366px) {
+  .quick-view-wrapper {
+    max-width: calc(100% - 208px);
+  }
+  .qv-selling-plans li label:after {
+    left: 4.5px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .quick-view-wrapper {
+    max-width: calc(100% - 30px);
+    padding: 40px;
+  }
+  .quick-product-info {
+    margin-top: 0px;
+  }
+  .quick-view-wrapper h2 {
+    font-size: 34px;
+  }
+  .quick-view-wrapper .vendor {
+    font-size: 20px;
+    line-height: 40px;
+  }
+  .quick-product-image {
+    display: flex;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .quick-view-wrapper {
+    gap: 0;
+    max-height: calc(100% - 50px);
+    overflow: auto;
+    border-radius: 30px;
+  }
+  .quick-product-image {
+    width: 100%;
+  }
+  .quick-product-image img {
+    max-height: 400px;
+    object-fit: contain;
+  }
+  .quick-product-info {
+    width: 100%;
+    padding-top: 20px;
+  }
+  .quick-variants {
+    margin-bottom: 24px;
+  }
+  .qv-ingredients-wrapper {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .quick-view-wrapper {
+    padding: 15px;
+    border-radius: 12px;
+  }
+  .quick-product-info {
+    padding-top: 10px;
+  }
+  .quick-view-wrapper .vendor {
+    font-size: 18px;
+  }
+  .quick-view-wrapper h2 {
+    font-size: 28px;
+  }
+  .quick-description p:first-child {
+    margin-top: 10px;
+  }
+  .quick-description, .quick-description p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .qv-ingredients-wrapper h3 {
+    letter-spacing: 0;
+  }
+  .quick-variants {
+    margin-top: 45px;
+  }
+  .qv-swatch-item {
+    max-width: 145px;
+  }
+  .qv-selling-plans li {
+    padding: 14px;
+  }
+  .quick-action button {
+    height: 54px;
+  }
+  .quick-action {
+    margin-bottom: 30px;
+  }
+  .quick-view-wrapper .quick-close {
+    top: 5px;
+    right: 24px;
+  }
+  .item-notification {
+    font-size: 16px;
+  }
+  .qv-selling-plans li label:after {
+    top: 2.3px;
+    left: 4.4px;
+  }
+  .quick-selecter{
+    height: 48px;
+    max-width: 168px;
+    width: 100%;
+  }
+  .quick-selecter input{
+    width: 60px;
+  }
+}

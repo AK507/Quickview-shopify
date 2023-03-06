@@ -1,0 +1,44 @@
+{{ 'quickview.css' | asset_url | stylesheet_tag }}
+{{ 'quickview.js' | asset_url | script_tag }}
+
+<div class="dbs-main">
+  {% if section.settings.main-heading != blank %}
+    <h2>{{ section.settings.main-heading }}</h2>
+  {% endif %}
+  {% if section.settings.sub_heading != blank %}
+    <h3>{{ section.settings.sub_heading }}</h3>
+  {% endif %}
+  <div class="dogs-product-block">
+    {% for block in section.blocks %}
+        {% assign product = all_products[block.settings.product_item] %}
+        <div class="dogs-product-card">
+          <a href="{{ product.url }}" class="d-title-wrap quick-view-action" data-handle="{{ product.handle }}">
+            <img src="{{ product.images[0] | img_url: 'master' }}"  class="d-normal-image" border="0" />
+            <img src="{{ product.images[1] | img_url: 'master' }}"  class="d-hover-image" border="0" />            
+            <div class="d-title-box" data-script="script_{{ block.id }}">
+              <p>Shop</p>
+              <h4>{{ product.title }}</h4>
+            </div>
+            </a>
+           <div class="d-add-to-bag">
+ {% comment %}             <a href="{{ product.url }}" data-id="{{ product.first_available_variant.id }}" data-selling-plan="{{product.selling_plan_groups[0].selling_plans[0].id}}" class="add-btn"> 
+
+      {% endcomment %}
+       <a href="/cart/add?id={{ product.selected_or_first_available_variant.id }}" data-script="script_{{ block.id }}" data-id="{{ product.first_available_variant.id }}" data-selling-plan="{{product.selling_plan_groups[0].selling_plans[0].id}}" class="add-btn"> 
+      {% if product.available %}
+        {% render 'subscription-product' %}
+                	<span class="add-bag">Add to Cart</span> — <span class="add-price">{{ product.price | money }}</span>
+                 {% else %}
+                	Sold Out
+                {% endif %} 
+
+      <script id="script_{{ block.id }}" type="text/json">
+            {{ product | json }}
+          </script>
+              </a>
+            </div>
+          
+        </div>
+      {% endfor %}
+  </div>
+</div>
